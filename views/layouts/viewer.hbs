@@ -1,0 +1,51 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+
+{{#each businesses}}
+<div class="row mb-4">
+    <div class="col-3">{{this.name}}</div>
+    <div class="col-2">
+        <div>{{this.city}}</div>
+        <div>{{this.email}}</div>
+        <div>{{this.url}}</div>
+    </div>
+    <div class="col-2">
+        <div>
+            <select class="form-control">
+                {{#each ../cities}}
+                <option value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div>
+            <select class="form-control">
+                {{#each ../categories}}
+                <option value="{{this._id}}">{{translate this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <div class="col-3">
+        <label>Title </label>
+        <input type="text" class="form-control">
+        <label>Price </label>
+        <input type="text" class="form-control">
+        <label></label>
+        <input type="text" class="form-control">
+        <label></label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="col-2">
+        {{!-- <div>
+            <label></label>
+            <input class="form-check-input" type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        </div> --}}
+        <button class="btn btn-primary">Create</button>
+        <button class="btn btn-primary">Ignore</button>
+    </div>
+</div>
+{{/each}}
